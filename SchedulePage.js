@@ -63,7 +63,7 @@ const SchedulePage = () => {
           </TouchableOpacity>
         </View>
           <TextInput
-            style={styles.input}
+            style={styles.inputnote}
             placeholder="Note"
             placeholderTextColor="#A0A0A0"
           />
@@ -74,6 +74,27 @@ const SchedulePage = () => {
         onConfirm={isDatePickerVisible ? handleDateConfirm : handleTimeConfirm}
         onCancel={hidePicker}
       />
+      <TextInput
+          style={styles.input}
+          placeholder="Blood Group"
+          placeholderTextColor="#A0A0A0"
+      />
+      <TouchableOpacity style={styles.roundButton}>
+        <Text style={styles.roundButtonText}>Book appointment</Text>
+      </TouchableOpacity>
+      <View style={styles.bottomBar}>
+        <TouchableOpacity style={styles.tab}>
+          <Text style={styles.tabText}>Home</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.tab}>
+          <Icon name='globe' size={30} color="#900" />
+          <Text style={styles.tabText}>Profile</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.tab}>
+          <Image source={require('./assets/notifications.png')} style={{width:24,height:24}} resizeMode='cover' />
+          <Text style={styles.tabText}>Bell</Text>
+        </TouchableOpacity>
+      </View>
     </View>
     
   );
@@ -108,6 +129,17 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginBottom: 16,
   },
+
+  inputnote: {
+    borderWidth:1,
+    borderRadius:10,
+    borderColor: '#A0A0A0',
+    paddingBottom: 8,
+    fontSize: 16,
+    marginBottom: 16,
+    height:200,
+    width: 200
+  },
   rowContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -127,6 +159,42 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginBottom: 16,
     width: 150,
+  },
+  roundButton: {
+    backgroundColor: 'red',
+    borderRadius: 50,
+    height: 50,
+    width: 230,
+    elevation: 2,
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center',
+    marginVertical: 20,
+  },
+  roundButtonText: {
+    color: 'white',
+    fontSize: 16,
+  },
+  bottomBar: {
+    backgroundColor: 'red',
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    height: 60,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+  },
+  tab: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  tabText: {
+    color: 'white',
+    fontSize: 14,
   },
 });
 
