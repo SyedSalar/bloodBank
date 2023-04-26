@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import DateTimePickerModal from "react-native-modal-datetime-picker";
+import DonationPage from './DonationPage';
 
 const SchedulePage = () => {
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
@@ -62,19 +63,12 @@ const SchedulePage = () => {
             />
           </TouchableOpacity>
         </View>
+        <Text  style={{justifyContent:'flex-start',alignContent:'flex-start',textAlign:'left'}}> Note</Text>
           <TextInput
             style={styles.inputnote}
-            placeholder="Note"
-            placeholderTextColor="#A0A0A0"
+           
           />
-      </View>
-      <DateTimePickerModal
-        isVisible={isDatePickerVisible || isTimePickerVisible}
-        mode={isDatePickerVisible ? "date" : "time"}
-        onConfirm={isDatePickerVisible ? handleDateConfirm : handleTimeConfirm}
-        onCancel={hidePicker}
-      />
-      <TextInput
+                <TextInput
           style={styles.input}
           placeholder="Blood Group"
           placeholderTextColor="#A0A0A0"
@@ -82,12 +76,20 @@ const SchedulePage = () => {
       <TouchableOpacity style={styles.roundButton}>
         <Text style={styles.roundButtonText}>Book appointment</Text>
       </TouchableOpacity>
+      </View>
+      <DateTimePickerModal
+        isVisible={isDatePickerVisible || isTimePickerVisible}
+        mode={isDatePickerVisible ? "date" : "time"}
+        onConfirm={isDatePickerVisible ? handleDateConfirm : handleTimeConfirm}
+        onCancel={hidePicker}
+      />
+
+      
       <View style={styles.bottomBar}>
         <TouchableOpacity style={styles.tab}>
           <Text style={styles.tabText}>Home</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.tab}>
-          <Icon name='globe' size={30} color="#900" />
           <Text style={styles.tabText}>Profile</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.tab}>
@@ -133,12 +135,15 @@ const styles = StyleSheet.create({
   inputnote: {
     borderWidth:1,
     borderRadius:10,
+    justifyContent:'flex-start',
+    alignContent:'flex-start',
+    textAlign:'center',
     borderColor: '#A0A0A0',
     paddingBottom: 8,
     fontSize: 16,
     marginBottom: 16,
     height:200,
-    width: 200
+    width: '100%'
   },
   rowContainer: {
     flexDirection: 'row',
