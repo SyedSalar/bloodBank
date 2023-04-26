@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import SchedulePage from './SchedulePage';
 const App = () => {
   return (
     <View style={styles.container}>
@@ -138,4 +139,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default SchedulePage;

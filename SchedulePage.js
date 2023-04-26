@@ -62,6 +62,11 @@ const SchedulePage = () => {
             />
           </TouchableOpacity>
         </View>
+          <TextInput
+            style={styles.input}
+            placeholder="Note"
+            placeholderTextColor="#A0A0A0"
+          />
       </View>
       <DateTimePickerModal
         isVisible={isDatePickerVisible || isTimePickerVisible}
@@ -70,6 +75,7 @@ const SchedulePage = () => {
         onCancel={hidePicker}
       />
     </View>
+    
   );
 };
 
@@ -92,10 +98,12 @@ const styles = StyleSheet.create({
   inputContainer: {
     flex: 1,
     padding: 16,
+    
   },
   input: {
-    borderBottomWidth: 1,
-    borderBottomColor: '#A0A0A0',
+    borderWidth:1,
+    borderRadius:10,
+    borderColor: '#A0A0A0',
     paddingBottom: 8,
     fontSize: 16,
     marginBottom: 16,
@@ -110,7 +118,7 @@ const styles = StyleSheet.create({
     paddingBottom: 8,
     fontSize: 16,
     marginBottom: 16,
-    width: '50%',
+    width: 150,
   },
   timeInput: {
     borderBottomWidth: 1,
@@ -118,7 +126,7 @@ const styles = StyleSheet.create({
     paddingBottom: 8,
     fontSize: 16,
     marginBottom: 16,
-    width: 300,
+    width: 150,
   },
 });
 
